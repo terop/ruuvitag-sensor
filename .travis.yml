@@ -7,16 +7,16 @@ stages:
   - tests-python
 jobs:
   include:
-  - stage: pylint
-    python: 3.6
-    env: TOXENV=pylint
-  - stage: tests-python
-    python:
-      - "2.7"
-      - "3.5"
-      - "3.6"
-      - "3.7"
-      - "3.8"
+    - stage: pylint
+      python: 3.6
+      env: TOXENV=pylint
+    - stage: tests-python
+      python:
+        - "2.7"
+        - "3.5"
+        - "3.6"
+        - "3.7"
+        - "3.8"
 install: pip install tox-travis
 script: tox
 jobs:
