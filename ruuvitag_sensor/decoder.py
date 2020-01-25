@@ -8,7 +8,6 @@ log = logging.getLogger(__name__)
 
 # pylint: disable=no-self-use
 
-
 def get_decoder(data_type):
     """
     Get correct decoder for Data Type.
