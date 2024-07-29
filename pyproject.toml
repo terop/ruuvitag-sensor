@@ -29,7 +29,7 @@ keywords = [ "RuuviTag BLE" ]
 dependencies = [
     "reactivex",
     "ptyprocess;platform_system=='Linux'",
-    "bleak",
+    "bleak>=0.21.0",
 ]
 
 [project.optional-dependencies]
