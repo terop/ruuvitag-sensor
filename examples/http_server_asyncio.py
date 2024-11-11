@@ -11,8 +11,6 @@ Requires:
     aiohttp - pip install aiohttp
 """
 
-# pylint: disable=duplicate-code
-
 import asyncio
 from concurrent.futures import ProcessPoolExecutor
 from datetime import datetime
@@ -41,7 +39,7 @@ async def data_update(queue):
     """
     Update data sent by the background process to global all_data variable
     """
-    global all_data  # pylint: disable=global-variable-not-assigned
+    global all_data  # noqa: PLW0602
     while True:
         while not queue.empty():
             data = queue.get()
@@ -63,7 +61,6 @@ async def get_data(request):
     return web.json_response(all_data[mac])
 
 
-# pylint: disable=redefined-outer-name
 def setup_routes(app):
     app.router.add_get("/data", get_all_data)
     app.router.add_get("/data/{mac}", get_data)
